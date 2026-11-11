@@ -1,0 +1,1749 @@
+ /* =====================================================
+   CAMPUS DIGITAL TWIN
+   MOBILE FIRST DESIGN
+===================================================== */
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f5f7;
+
+    color: #17191d;
+
+    min-height: 100vh;
+}
+
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app-container {
+    min-height: 100vh;
+
+    padding-bottom: 88px;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header {
+    height: 96px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b9fe6,
+            #3d94dc
+        );
+
+    border-radius:
+        0 0 30px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 22px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+    box-shadow:
+        0 8px 25px
+        rgba(59, 130, 190, 0.18);
+}
+
+
+/* =====================================================
+   HEADER BUTTONS
+===================================================== */
+
+.icon-button {
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.16);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.menu-button {
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-button span {
+    width: 22px;
+
+    height: 3px;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+
+.notification-button {
+    font-size: 20px;
+}
+
+
+.notification-dot {
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ff4f67;
+
+    top: 7px;
+
+    right: 8px;
+
+    border: 2px solid #4b9fe6;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.app-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+}
+
+
+.logo-circle {
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,0.10);
+}
+
+
+.logo-text {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.logo-text strong {
+    font-size: 15px;
+}
+
+
+.logo-text small {
+    font-size: 10px;
+
+    opacity: 0.85;
+
+    margin-top: 2px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding:
+        0 18px 25px;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+    display: none;
+
+    animation:
+        pageAppear 0.25s ease;
+}
+
+
+.page.active-page {
+    display: block;
+}
+
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome-section {
+    background: white;
+
+    margin:
+        0 -18px;
+
+    padding:
+        28px 25px 24px;
+
+    border-radius:
+        0 0 30px 30px;
+}
+
+
+.welcome-small {
+    color: #858a91;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+
+.welcome-section h1 {
+    font-size: 25px;
+
+    line-height: 1.25;
+}
+
+
+.welcome-name {
+    color: #6e747c;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-section {
+    position: relative;
+
+    margin-top: 20px;
+
+    z-index: 30;
+}
+
+
+.search-box {
+    height: 58px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 17px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(40,50,60,0.05);
+}
+
+
+.search-icon {
+    font-size: 23px;
+
+    margin-right: 12px;
+
+    filter:
+        grayscale(1);
+}
+
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 16px;
+
+    color: #222;
+}
+
+
+.search-box input::placeholder {
+    color: #999da3;
+}
+
+
+.clear-search {
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #eef0f2;
+
+    color: #555;
+
+    font-size: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* SEARCH RESULTS */
+
+.search-results {
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: 65px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 7px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.13);
+
+    overflow: hidden;
+}
+
+
+.search-result {
+    width: 100%;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    background: white;
+
+    text-align: left;
+
+    border-radius: 10px;
+}
+
+
+.search-result:hover {
+    background: #f5f7f9;
+}
+
+
+.search-result-icon {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: #eef5fb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+.search-result strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+
+.search-result small {
+    color: #858b94;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+
+    display: block;
+}
+
+
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 22px;
+}
+
+
+.feature-card {
+    height: 145px;
+
+    border-radius: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.feature-card:active {
+    transform: scale(0.97);
+}
+
+
+.feature-content {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.feature-title {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #16181c;
+}
+
+
+.feature-content small {
+    margin-top: 8px;
+
+    font-size: 10px;
+
+    color: #5f6570;
+}
+
+
+.feature-illustration {
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 15px;
+
+    font-size: 46px;
+
+    z-index: 4;
+
+    filter:
+        drop-shadow(
+            0 4px 4px
+            rgba(0,0,0,0.07)
+        );
+}
+
+
+.feature-circle {
+    position: absolute;
+
+    width: 115px;
+
+    height: 115px;
+
+    border-radius: 50%;
+
+    right: -17px;
+
+    bottom: -25px;
+
+    opacity: 0.55;
+}
+
+
+/* CARD COLORS */
+
+.campus-card {
+    background: #dceefe;
+}
+
+
+.campus-card .feature-circle {
+    background: #9cccf4;
+}
+
+
+.crowd-card {
+    background: #e5e2ff;
+}
+
+
+.crowd-card .feature-circle {
+    background: #aaa5f2;
+}
+
+
+.library-card {
+    background: #d9f4ec;
+}
+
+
+.library-card .feature-circle {
+    background: #9edccc;
+}
+
+
+.labs-card {
+    background: #fce5df;
+}
+
+
+.labs-card .feature-circle {
+    background: #f3aaa0;
+}
+
+
+.canteen-card {
+    background: #fff0d9;
+}
+
+
+.canteen-card .feature-circle {
+    background: #f4c47a;
+}
+
+
+.parking-card {
+    background: #e5f1fc;
+}
+
+
+.parking-card .feature-circle {
+    background: #a8d7f5;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.quick-section,
+.status-section {
+    margin-top: 25px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+
+.section-heading h2 {
+    font-size: 17px;
+}
+
+
+.section-heading p {
+    font-size: 10px;
+
+    color: #8a9099;
+
+    margin-top: 3px;
+}
+
+
+.view-all {
+    background: transparent;
+
+    color: #438ed0;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   QUICK GRID
+===================================================== */
+
+.quick-grid {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(40,50,60,0.04);
+}
+
+
+.quick-card {
+    min-height: 110px;
+
+    background: white;
+
+    border: 1px solid #e7edf3;
+
+    border-radius: 18px;
+
+    padding: 12px 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.quick-icon {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+
+.blue-icon {
+    background: #e2f0fc;
+}
+
+
+.purple-icon {
+    background: #ebe8ff;
+}
+
+
+.green-icon {
+    background: #e1f6ef;
+}
+
+
+.orange-icon {
+    background: #fff0dc;
+}
+
+
+.quick-card span {
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.quick-card small {
+    color: #9298a0;
+
+    font-size: 8px;
+
+    margin-top: 4px;
+}
+
+
+/* =====================================================
+   STATUS SECTION
+===================================================== */
+
+.status-section {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.status-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.status-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 2px;
+
+    border-bottom:
+        1px solid #f0f1f3;
+}
+
+
+.status-row:last-child {
+    border-bottom: none;
+}
+
+
+.status-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.status-emoji {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 11px;
+
+    background: #f3f6f8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+.status-info strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+
+.status-info small {
+    display: block;
+
+    color: #91969e;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+.status-badge {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.status-badge.high {
+    background: #ffe6e7;
+
+    color: #d34c54;
+}
+
+
+.status-badge.medium {
+    background: #fff1cf;
+
+    color: #9d7700;
+}
+
+
+.status-badge.low {
+    background: #e3f7eb;
+
+    color: #21834c;
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        24px 2px 17px;
+}
+
+
+.page-heading h1 {
+    font-size: 22px;
+}
+
+
+.page-heading p {
+    color: #818892;
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+
+.live-badge {
+    background: #e2f7eb;
+
+    color: #21804a;
+
+    border-radius: 20px;
+
+    padding: 6px 9px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   DIGITAL MAP
+===================================================== */
+
+.digital-map {
+    height: 500px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.4) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(255,255,255,0.4) 1px,
+            transparent 1px
+        ),
+        #e5edf1;
+
+    background-size:
+        32px 32px;
+
+    border:
+        1px solid #d9e1e6;
+}
+
+
+/* MAP ROADS */
+
+.map-road {
+    position: absolute;
+
+    background: #c8d2d9;
+
+    border-radius: 20px;
+}
+
+
+.map-road-one {
+    height: 25px;
+
+    left: -10px;
+
+    right: -10px;
+
+    top: 48%;
+}
+
+
+.map-road-two {
+    width: 25px;
+
+    top: -10px;
+
+    bottom: -10px;
+
+    left: 48%;
+}
+
+
+.small-road-one {
+    height: 12px;
+
+    width: 45%;
+
+    left: 0;
+
+    top: 27%;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.small-road-two {
+    height: 12px;
+
+    width: 42%;
+
+    right: 0;
+
+    bottom: 27%;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+/* MAP LOCATION */
+
+.map-location {
+    position: absolute;
+
+    z-index: 10;
+
+    width: 120px;
+
+    height: 78px;
+
+    border-radius: 15px;
+
+    color: white;
+
+    padding: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 6px 13px
+        rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.2s;
+}
+
+
+.map-location:active {
+    transform: scale(0.94);
+}
+
+
+.map-location strong {
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+.map-location small {
+    font-size: 8px;
+
+    margin-top: 2px;
+}
+
+
+.map-icon {
+    font-size: 20px;
+}
+
+
+.library-location {
+    left: 7%;
+
+    top: 11%;
+
+    background: #31b86e;
+}
+
+
+.labs-location {
+    right: 7%;
+
+    top: 11%;
+
+    background: #e0a900;
+}
+
+
+.canteen-location {
+    left: 7%;
+
+    bottom: 12%;
+
+    background: #e64b4b;
+}
+
+
+.parking-location {
+    right: 7%;
+
+    bottom: 12%;
+
+    background: #31b86e;
+}
+
+
+/* MAP BUILDINGS */
+
+.map-building {
+    position: absolute;
+
+    z-index: 6;
+
+    color: white;
+
+    background: #477aa8;
+
+    border-radius: 10px;
+
+    padding: 11px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 9px
+        rgba(0,0,0,0.12);
+}
+
+
+.block-one {
+    left: 39%;
+
+    top: 27%;
+
+    width: 100px;
+
+    text-align: center;
+}
+
+
+.block-two {
+    left: 39%;
+
+    bottom: 27%;
+
+    width: 100px;
+
+    text-align: center;
+}
+
+
+.map-garden {
+    position: absolute;
+
+    left: 38%;
+
+    top: 45%;
+
+    color: #54a56f;
+
+    font-size: 20px;
+
+    z-index: 5;
+
+    letter-spacing: 2px;
+}
+
+
+.main-gate {
+    position: absolute;
+
+    bottom: 3%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background: #172033;
+
+    color: white;
+
+    padding:
+        7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    z-index: 15;
+}
+
+
+/* =====================================================
+   MAP LEGEND
+===================================================== */
+
+.map-legend {
+    background: white;
+
+    margin-top: 12px;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    font-size: 10px;
+
+    color: #68727d;
+}
+
+
+.map-legend span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.map-legend i {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+
+.legend-green {
+    background: #31b86e;
+}
+
+
+.legend-yellow {
+    background: #e0a900;
+}
+
+
+.legend-red {
+    background: #e64b4b;
+}
+
+
+/* =====================================================
+   MAP INFO
+===================================================== */
+
+.map-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+
+.map-info-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.map-info-card > span {
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: #edf5fb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+
+.map-info-card strong {
+    display: block;
+
+    font-size: 15px;
+}
+
+
+.map-info-card small {
+    color: #888f98;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   CROWD SUMMARY
+===================================================== */
+
+.crowd-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+
+.summary-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+.summary-card span {
+    display: block;
+
+    color: #8a9098;
+
+    font-size: 9px;
+}
+
+
+.summary-card strong {
+    display: block;
+
+    font-size: 22px;
+
+    margin-top: 7px;
+}
+
+
+.summary-card small {
+    color: #9298a0;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   WHITE CARD
+===================================================== */
+
+.white-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 17px;
+
+    margin-bottom: 13px;
+}
+
+
+.card-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+
+.card-heading h2 {
+    font-size: 15px;
+}
+
+
+.card-heading p {
+    color: #8a9099;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+/* =====================================================
+   FAKE LINE CHART
+===================================================== */
+
+.fake-line-chart {
+    height: 240px;
+
+    display: flex;
+
+    position: relative;
+}
+
+
+.chart-y-label {
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
+
+    color: #a0a5ac;
+
+    font-size: 8px;
+
+    padding:
+        30px 4px 0 0;
+}
+
+
+.chart-area {
+    flex: 1;
+
+    position: relative;
+
+    border-left:
+        1px solid #e7ebee;
+
+    border-bottom:
+        1px solid #e7ebee;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 39px,
+            #f0f2f4 40px
+        );
+}
+
+
+.chart-line {
+    position: absolute;
+
+    left: 4%;
+
+    right: 5%;
+
+    top: 36%;
+
+    height: 85px;
+
+    border-top:
+        3px solid #4a9ee4;
+
+    transform:
+        rotate(-5deg);
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(
+            0 3px 3px
+            rgba(74,158,228,0.15)
+        );
+}
+
+
+.chart-point {
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #4a9ee4;
+
+    border: 2px solid white;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0,0,0,0.15);
+
+    z-index: 3;
+}
+
+
+.chart-point span {
+    position: absolute;
+
+    top: -17px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #6f7882;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+}
+
+
+.point-1 {
+    left: 7%;
+
+    top: 70%;
+}
+
+
+.point-2 {
+    left: 21%;
+
+    top: 62%;
+}
+
+
+.point-3 {
+    left: 35%;
+
+    top: 51%;
+}
+
+
+.point-4 {
+    left: 49%;
+
+    top: 43%;
+}
+
+
+.point-5 {
+    left: 63%;
+
+    top: 31%;
+}
+
+
+.point-6 {
+    left: 77%;
+
+    top: 28%;
+}
+
+
+.point-7 {
+    left: 91%;
+
+    top: 39%;
+}
+
+
+.chart-time {
+    position: absolute;
+
+    bottom: -25px;
+
+    color: #90969e;
+
+    font-size: 8px;
+}
+
+
+.time-1 {
+    left: 4%;
+}
+
+
+.time-2 {
+    left: 25%;
+}
+
+
+.time-3 {
+    left: 47%;
+}
+
+
+.time-4 {
+    left: 68%;
+}
+
+
+.time-5 {
+    right: 1%;
+}
+
+
+/* =====================================================
+   CROWD LOCATION
+===================================================== */
+
+.crowd-location-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.crowd-location {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.crowd-location > span {
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: #f2f5f7;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.crowd-location-main {
+    flex: 1;
+}
+
+
+.crowd-location-main strong {
+    font-size: 10px;
+}
+
+
+.mini-progress {
+    height: 6px;
+
+    background: #edf0f2;
+
+    border-radius: 20px;
+
+    margin-top: 6px;
+
+    overflow: hidden;
+}
+
+
+.mini-progress div {
+    height: 100%;
+
+    background: #4b9fe6;
+
+    border-radius: 20px;
+}
+
+
+.crowd-location b {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FACILITIES
+=======================

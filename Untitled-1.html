@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="description"
+        content="Campus Digital Twin - Smart Campus Analytics"
+    >
+
+    <title>Campus Digital Twin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     APP CONTAINER
+===================================================== -->
+
+<div class="app-container">
+
+
+    <!-- =================================================
+         TOP HEADER
+    ================================================== -->
+
+    <header class="top-header">
+
+
+        <!-- Hamburger -->
+
+        <button
+            class="icon-button menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- Logo -->
+
+        <div class="app-logo">
+
+            <div class="logo-circle">
+
+                🏫
+
+            </div>
+
+            <div class="logo-text">
+
+                <strong>Campus</strong>
+
+                <small>Digital Twin</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Notification -->
+
+        <button
+            class="icon-button notification-button"
+            id="notificationButton"
+            aria-label="Notifications"
+        >
+
+            🔔
+
+            <span class="notification-dot"></span>
+
+        </button>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         SIDE MENU
+    ================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+    >
+
+
+        <div class="side-menu-header">
+
+            <div class="side-logo">
+
+                🏫
+
+            </div>
+
+            <div>
+
+                <strong>Campus Digital Twin</strong>
+
+                <small>Smart Campus</small>
+
+            </div>
+
+            <button
+                id="closeMenu"
+                class="close-menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+
+            <button
+                class="menu-item active"
+                data-page="home"
+            >
+
+                🏠
+
+                <span>Home</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="campus"
+            >
+
+                🗺️
+
+                <span>Campus Map</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="crowd"
+            >
+
+                👥
+
+                <span>Crowd Analysis</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="facilities"
+            >
+
+                🏢
+
+                <span>Facilities</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="analytics"
+            >
+
+                📊
+
+                <span>Analytics</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="insights"
+            >
+
+                💡
+
+                <span>Insights</span>
+
+            </button>
+
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span class="online-circle"></span>
+
+            System Online
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HOME PAGE
+        ================================================== -->
+
+        <section
+            class="page active-page"
+            id="homePage"
+        >
+
+
+            <!-- Greeting -->
+
+            <section class="welcome-section">
+
+                <p class="welcome-small">
+                    Welcome to your smart campus
+                </p>
+
+                <h1>
+                    Good Afternoon ☀️
+                </h1>
+
+                <p class="welcome-name">
+                    Campus Digital Twin
+                </p>
+
+            </section>
+
+
+
+            <!-- Search -->
+
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search campus..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        id="clearSearch"
+                        class="clear-search hidden"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="searchResults"
+                    class="search-results hidden"
+                ></div>
+
+            </section>
+
+
+
+            <!-- Main Feature Cards -->
+
+            <section class="feature-grid">
+
+
+                <!-- Campus -->
+
+                <button
+                    class="feature-card campus-card"
+                    data-page="campus"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Campus
+                        </span>
+
+                        <small>
+                            Explore campus
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        🗺️
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+
+                <!-- Crowd -->
+
+                <button
+                    class="feature-card crowd-card"
+                    data-page="crowd"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Crowd
+                        </span>
+
+                        <small>
+                            1,245 active
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        👥
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+
+                <!-- Library -->
+
+                <button
+                    class="feature-card library-card"
+                    data-location="library"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Library
+                        </span>
+
+                        <small>
+                            87.6% occupied
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        📚
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+
+                <!-- Labs -->
+
+                <button
+                    class="feature-card labs-card"
+                    data-location="labs"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Labs
+                        </span>
+
+                        <small>
+                            70% occupied
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        🧪
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+
+                <!-- Canteen -->
+
+                <button
+                    class="feature-card canteen-card"
+                    data-location="canteen"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Canteen
+                        </span>
+
+                        <small>
+                            90.4% occupied
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        🍱
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+
+                <!-- Parking -->
+
+                <button
+                    class="feature-card parking-card"
+                    data-location="parking"
+                >
+
+                    <div class="feature-content">
+
+                        <span class="feature-title">
+                            Parking
+                        </span>
+
+                        <small>
+                            76% occupied
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-illustration">
+
+                        🅿️
+
+                    </div>
+
+                    <div class="feature-circle"></div>
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- Quick Analytics -->
+
+            <section class="quick-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Campus Analytics
+                        </h2>
+
+                        <p>
+                            Quick overview
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="view-all"
+                        data
